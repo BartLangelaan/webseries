@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+</head>
+
+<template name="main">
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="{{pathFor route='home'}}" class="brand-logo">Webseries</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="{{pathFor route='home'}}">Home</a></li>
+                <li><a href="{{pathFor route='login'}}">Inloggen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="main">{{> yield}}</main>
+
+    <footer class="page-footer page-row">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Webseries Database</h5>
+                    <p class="grey-text text-lighten-4">Deze database is de grootste Nederlandse webserie database ter wereld. Het is een open database: iedereen kan zijn of haar favoriete shows toevoegen.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="/admin">Administratie</a></li>
+                                <li><a class="grey-text text-lighten-3" href="/login">Inloggen</a></li>
+                                <li><a class="grey-text text-lighten-3" href="#!">Veelgestelde vragen</a></li>
+                                <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l6 s12">
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="/channels">Overzicht van kanalen</a></li>
+                                <li><a class="grey-text text-lighten-3" href="/shows">Overzicht van series</a></li>
+                                <li><a class="grey-text text-lighten-3" href="/episodes">Overzicht van afleveringen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2015 Webseries Database
+                <a class="grey-text text-lighten-4 right" href="http://bart.ninja/">Gemaakt door Bart Langelaan</a>
+            </div>
+        </div>
+    </footer>
+
+</template>
+
+
+<template name="login">
+    <p>Login page.</p>
+</template>
+
+
+<template name="season">
+    <p>View channel info..</p>
+</template>

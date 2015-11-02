@@ -1,0 +1,10 @@
+<template name="home">
+    {{documentTitle "Webseries - Alle webseries op een rijtje!"}}
+    <h1>Home</h1>
+    <p>Welkom bij de Webseries Database.</p>
+    <p>Meest bekeken kanalen:</p>
+    <div>{{#each most_viewed_channels}}
+        <div><a href="{{pathFor route='channel.show' data=getChannelPathData}}">Show: {{title}}</a></div>
+    {{/each}}</div>
+    <a href="{{pathFor route='channel.add'}}">Add new channel</a>
+</template>
