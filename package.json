@@ -1,0 +1,18 @@
+{
+  "name": "webseries",
+  "version": "0.0.0",
+  "description": "A database for webseries, like TheTVDB for TV shows and IMDB for movies.",
+  "main": "src/main.js",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BartLangelaan/webseries.git"
+  },
+  "author": "Bart Langelaan",
+  "bugs": {
+    "url": "https://github.com/BartLangelaan/webseries/issues"
+  },
+  "homepage": "https://github.com/BartLangelaan/webseries#readme"
+}
