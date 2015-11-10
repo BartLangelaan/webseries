@@ -1,7 +1,10 @@
 language: node_js
 
-# Only most stable nodejs needed
-node_js: stable
+node_js:
+  - stable
+  - "iojs"
+  - "0.12"
+  - "0.10"
 
 # Give permission to install meteor
 sudo: required
