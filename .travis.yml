@@ -17,5 +17,5 @@ before_install:
   - sh -e /etc/init.d/xvfb start
   - npm install -g gulp
 
-after_install:
+before_script:
   - ./node_modules/protractor/bin/webdriver-manager update
