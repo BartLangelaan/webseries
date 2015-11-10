@@ -1,5 +1,5 @@
 language: node_js
 node_js: stable
 before_install:
-  - npm install -g gulp
+  - npm install -g gulp protractor
   - curl https://install.meteor.com/ | sh
