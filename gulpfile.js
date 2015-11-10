@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var run = require('gulp-run');
 var protractor = require("gulp-protractor").protractor;
+var webdriver_standalone = require("gulp-protractor").webdriver_standalone;
 
 
 /**
@@ -9,17 +10,19 @@ var protractor = require("gulp-protractor").protractor;
  * @returns {Promise}
  */
 function meteor(args, callback){
+    console.log(typeof args);
+    if(typeof args == "function"){
+        callback = args;
+        args = null;
+    }
     if(!args) args = "";
     if(!callback) callback = function(){};
     return run('meteor '+args, {cwd: 'src', verbosity: 3}).exec(callback);
 }
 
 
-gulp.task('start', function(callback){
+gulp.task('start', function(){
     meteor();
-    setTimeout(function(){
-        callback();
-    }, 20000);
 });
 
 /**
@@ -36,16 +39,10 @@ gulp.task('default', ['start'], function(callback){
 
 });
 
-gulp.task('selenium:start', function(callback){
-    run('webdriver-manager update').exec(function() {
-        var webdriverStart = run('webdriver-manager start', {verbosity: 3}).exec();
-        setTimeout(function(){
-            callback();
-        }, 1000);
-    });
-});
+gulp.task('webdriver_standalone', webdriver_standalone);
 
-gulp.task('test', ['selenium:start', 'start'], function(){
+gulp.task('test', ['start'], function(){
+    gulp.start("webdriver_standalone");
     gulp.src(["tests/*.test.js"])
         .pipe(protractor({
             configFile: "protractor.config.js"

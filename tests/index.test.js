@@ -3,5 +3,7 @@ describe('Webseries homepage', function() {
         browser.driver.get('localhost:3000');
 
         expect(browser.driver.getTitle()).toContain('Webseries');
+
+        console.log(browser.driver.getTitle());
     });
 });
