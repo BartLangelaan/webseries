@@ -21,8 +21,9 @@ function meteor(args, callback){
 }
 
 
-gulp.task('start', function(){
+gulp.task('start', function(callback){
     meteor();
+    setTimeout(callback, 20000)
 });
 
 /**
