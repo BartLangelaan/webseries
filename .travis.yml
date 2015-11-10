@@ -1,7 +1,7 @@
 language: node_js
 node_js: stable
 before_install:
-  - curl https://install.meteor.com/ | sh
+  - "curl -L https://install.meteor.com/ | /bin/sh"
   - java -version
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
