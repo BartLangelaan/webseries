@@ -22,5 +22,7 @@ before_script:
 
 script:
   - cd src
-  - meteor &
-  - sleep 60
+  - npm start &
+  - sleep 30
+  - cd ..
+  - npm test
