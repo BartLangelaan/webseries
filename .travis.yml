@@ -18,8 +18,6 @@ before_script:
   - ./node_modules/protractor/bin/webdriver-manager update
 
 script:
-  - cd src
   - npm start &
   - sleep 300
-  - cd ..
   - npm test
