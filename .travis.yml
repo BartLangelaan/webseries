@@ -19,7 +19,7 @@ before_script:
 
 script:
   - cd src
-  - npm start
-  - sleep 30
+  - npm start &
+  - sleep 300
   - cd ..
   - npm test
