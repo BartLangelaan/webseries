@@ -10,8 +10,8 @@
     "protractor": "^2.5.1"
   },
   "scripts": {
-    "start": "gulp",
-    "test": "gulp test"
+    "start": "cd src && meteor",
+    "test": "protractor protractor.config.js"
   },
   "repository": {
     "type": "git",
