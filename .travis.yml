@@ -3,14 +3,10 @@ language: node_js
 node_js:
   - stable
 
-# Give permission to install meteor
 sudo: required
 
-
 before_install:
-  # Install Meteor
   - "curl -L https://install.meteor.com/ | /bin/sh"
-  - npm install -g gulp
 
 before_script:
   - export DISPLAY=:99.0

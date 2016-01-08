@@ -4,9 +4,6 @@
   "description": "A database for webseries, like TheTVDB for TV shows and IMDB for movies.",
   "main": "src/main.js",
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-protractor": "^1.0.0",
-    "gulp-run": "^1.6.11",
     "protractor": "^2.5.1"
   },
   "scripts": {
