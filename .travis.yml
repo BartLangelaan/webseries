@@ -2,9 +2,6 @@ language: node_js
 
 node_js:
   - stable
-  - "iojs"
-  - "0.12"
-  - "0.10"
 
 # Give permission to install meteor
 sudo: required
@@ -22,7 +19,7 @@ before_script:
 
 script:
   - cd src
-  - npm start &
+  - npm start
   - sleep 30
   - cd ..
   - npm test
