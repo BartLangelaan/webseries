@@ -18,9 +18,6 @@ script:
   - sleep 300
   - npm test
 
-#before_deploy:
-#  - "printf %METEOR_USER%\n%METEOR_PASS%\n | meteor login"
-
 deploy:
   - cd src
   - meteor deploy webseries.meteor.com
