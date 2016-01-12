@@ -17,3 +17,6 @@ script:
   - npm start &
   - sleep 300
   - npm test
+
+deploy:
+  - ./deploy.sh
