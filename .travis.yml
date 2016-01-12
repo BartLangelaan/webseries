@@ -21,7 +21,7 @@ script:
 before_deploy:
   - export METEOR_USER=$METEOR_USER
   - export METEOR_PASS=$METEOR_PASS
-  - printf '$METEOR_USER\n$METEOR_PASS\n' | meteor login
+  - "printf '$METEOR_USER\n$METEOR_PASS\n' | meteor login"
   - cd src
 
 deploy:
