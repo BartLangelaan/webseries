@@ -17,3 +17,13 @@ script:
   - npm start &
   - sleep 300
   - npm test
+
+before_deploy:
+  - printf %METEOR_USER%\n%METEOR_PASS%\n | meteor login
+  - cd src
+
+deploy:
+  provider: script
+  script: meteor deploy wildspot.meteor.com
+  on:
+    branch: master
