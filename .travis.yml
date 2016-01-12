@@ -17,7 +17,3 @@ script:
   - npm start &
   - sleep 300
   - npm test
-
-deploy:
-  - cd src
-  - meteor deploy webseries.meteor.com
