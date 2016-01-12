@@ -19,4 +19,6 @@ script:
   - npm test
 
 deploy:
-  - sh ./deploy.sh
+  - printf %METEOR_USER%\n%METEOR_PASS%\n | meteor login
+  - cd src
+  - meteor deploy webseries.meteor.com
