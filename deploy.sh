@@ -1,7 +1,11 @@
-#!/usr/bin/env sh
-echo "DEPLOYING"
-echo $METEOR_USER
+#!/usr/bin/expect -f
 
-printf '$METEOR_USER\n$METEOR_PASS\n'| meteor login
+spawn meteor login
+expect "Username:\r"
+send $METEOR_USER
+expect "Password:\r"
+send $METEOR_PASS
+
 cd src
+
 meteor deploy wildspot.meteor.com
