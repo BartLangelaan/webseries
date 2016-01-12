@@ -18,14 +18,8 @@ script:
   - sleep 100
   - npm test
 
-before_deploy:
-  - export METEOR_USER=$METEOR_USER
-  - export METEOR_PASS=$METEOR_PASS
-  - "printf '$METEOR_USER\n$METEOR_PASS\n' | meteor login"
-  - cd src
-
 deploy:
   provider: script
-  script: meteor deploy wildspot.meteor.com
+  script: deploy.sh
   on:
     branch: master
