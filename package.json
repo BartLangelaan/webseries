@@ -4,7 +4,7 @@
   "description": "A database for webseries, like TheTVDB for TV shows and IMDB for movies.",
   "main": "src/main.js",
   "devDependencies": {
-    "protractor": "^2.5.1"
+    "protractor": "^3.1.0"
   },
   "scripts": {
     "start": "cd src && meteor",
