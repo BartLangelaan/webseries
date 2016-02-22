@@ -3,8 +3,7 @@ node_js:
 - stable
 sudo: required
 before_install:
-- openssl aes-256-cbc -K $encrypted_1c5e01a7d3e8_key -iv $encrypted_1c5e01a7d3e8_iv
-  -in src/server/accounts.js.enc -out src/server/accounts.js -d
+- echo $gpg_key | gpg --pass-phrase-fd 0 src/server/accounts.js.gpg
 - curl -L https://install.meteor.com/ | /bin/sh
 before_script:
 - export DISPLAY=:99.0
@@ -13,3 +12,6 @@ script:
 - npm start &
 - sleep 100
 - npm test
+env:
+  global:
+    secure: ZtiplwoUclVzHNR5wMELU4Te216TDSqsq+gw3pVKL28eyONPzYpr+3CnX1OOy4gSj5fQ675lQy5rCM0A21W66HzvX6aTDdx+sOsxmmLDM6VCR5sbTa4EdcklxaJxIC5BBNWmg9h25AqDrH3yMR3VSp0ZDk+9LTVEFfboU36z9HiYqJDYPp0SruQQ6afyTPofWut/kwug7j5ovFoLV+YXJe59B/Mdenl4X3wbTCjH/OiC0Faga0EVb6V4gc3h5/3wQva0W2wnede+b3buhcMzoaNPY7uYhIdDHsMNqYHkOPJyjfvQnfuncgfl6L0xZJGM9xAWF+gywGqKFovtKIcfz/c9UomrvaijtTJgUQf8TaJJOSqRUUoQpKhH9n5PL/sp3RDYoPKndDdiRP1Owp/4/VWimIqolkyND4+xPkS04Z1m/7Loup87612Ah4MKh5h3Ko3XVaSGYvhB4zVqoT3uBTBLqC7xKNUZNCrkcsacyGxtM0+U/n70iS04ZauaqmbB5Bzav3HMbOa9cYSvBq43ekI4RpIAytthMgHfLufhA3DcfqK+4+ZLgXJudhEFPUEGuxDsLGS2UMfAaE9Y/q0Reihce70eA8QT7VjdD2b5FgLQPWfrhih4+IcUrC2OSPvO7+UpVWE0ppik/quCWc3xnXJF1hy8IVKcPEOisZWhkNI=
