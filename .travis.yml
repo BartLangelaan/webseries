@@ -3,7 +3,7 @@ node_js:
 - stable
 sudo: required
 before_install:
-- echo $gpg_key | gpg --pass-phrase-fd 0 src/server/accounts.js.gpg
+- gpg --batch --passphrase $gpg_key src/server/accounts.js.gpg
 - curl -L https://install.meteor.com/ | /bin/sh
 before_script:
 - export DISPLAY=:99.0
