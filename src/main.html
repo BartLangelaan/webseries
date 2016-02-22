@@ -12,7 +12,12 @@
             <a href="{{pathFor route='home'}}" class="brand-logo">Webseries</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="{{pathFor route='home'}}">Home</a></li>
-                <li><a href="{{pathFor route='login'}}">Inloggen</a></li>
+                {{#if loggedInUser}}
+                    <li><em>Ingelogd als {{loggedInUser.profile.name}}</em></li>
+                    <li><a href="#" class="logout">Log uit</a></li>
+                {{else}}
+                    <li><a href="#" class="login">Log in</a></li>
+                {{/if}}
             </ul>
         </div>
     </nav>
@@ -56,11 +61,6 @@
         </div>
     </footer>
 
-</template>
-
-
-<template name="login">
-    <p>Login page.</p>
 </template>
 
 

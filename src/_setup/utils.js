@@ -5,3 +5,7 @@ Handlebars.registerHelper("documentTitle", function(title) {
         document.title = "Webseries Database";
     }
 });
+
+Handlebars.registerHelper("loggedInUser", function(){
+    return Meteor.user();
+});
