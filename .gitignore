@@ -1,3 +1,7 @@
+### Unencrypted files ###
+/src/server/accounts.js
+
+
 ### Meteor ###
 build/
 

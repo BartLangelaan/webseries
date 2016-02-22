@@ -1,18 +1,15 @@
 language: node_js
-
 node_js:
-  - stable
-
+- stable
 sudo: required
-
 before_install:
-  - "curl -L https://install.meteor.com/ | /bin/sh"
-
+- openssl aes-256-cbc -K $encrypted_1c5e01a7d3e8_key -iv $encrypted_1c5e01a7d3e8_iv
+  -in src/server/accounts.js.enc -out src/server/accounts.js -d
+- curl -L https://install.meteor.com/ | /bin/sh
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 script:
-  - npm start &
-  - sleep 100
-  - npm test
+- npm start &
+- sleep 100
+- npm test
