@@ -26,6 +26,8 @@ function searchData(){
 }
 
 Router.map(function(){
+
+    // Homepage
     this.route('/', {
         name: 'home',
         subscriptions: function(){
@@ -35,19 +37,61 @@ Router.map(function(){
 
         }
     });
+
+    // Specific pages
     this.route('/login', {
         name: 'login'
     });
-    this.route('/add', {
-        name: 'channel.add'
-    });
 
-    this.route('/:channel', {
-        name: 'channel.show',
+    // Channel pages
+    this.route('/channels/new', {
+        name: 'channel.add',
+        template: 'add',
+        data: {
+            collection: "DB.Channels"
+        }
+    });
+    this.route('/channels/:channel', {
+        name: 'channel',
         data: searchData
     });
-    this.route('/:channel/season-:season', {
+
+    // Show pages
+    this.route('/channels/:channel/shows/add', {
+        name: 'show.add',
+        template: 'add',
+        data: {
+            collection: "DB.Shows"
+        }
+    });
+    this.route('/channels/:channel/shows/:show', {
+        name: 'show',
+        data: searchData
+    });
+
+    // Show pages
+    this.route('/channels/:channel/shows/:show/seasons/add', {
+        name: 'season.add',
+        template: 'add',
+        data: {
+            collection: "DB.Seasons"
+        }
+    });
+    this.route('/channels/:channel/shows/:show/seasons/:season', {
         name: 'season',
+        data: searchData
+    });
+
+    // Episode pages
+    this.route('/channels/:channel/shows/:show/seasons/:season/episodes/add', {
+        name: 'episode.add',
+        template: 'add',
+        data: {
+            collection: "DB.Episodes"
+        }
+    });
+    this.route('/channels/:channel/shows/:show/seasons/:season/episodes/:episode', {
+        name: 'episode',
         data: searchData
     });
 });
