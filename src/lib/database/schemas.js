@@ -1,7 +1,3 @@
-/** Make sure the default MaterializeCSS template is used */
-if(Meteor.isClient)
-    AutoForm.setDefaultTemplate('materialize');
-
 /**
  * Holds all SimpleSchema's that are attached to Collections
  * @type {Object.<string, SimpleSchema>}
