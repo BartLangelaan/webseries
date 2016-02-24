@@ -10,7 +10,7 @@ for(var collection_name in DB){
             added: function (document) {
                 if (initializing) return;
                 DB.Changes.insert({
-                    database: collection._name,
+                    database: DB[collection_name]._name,
                     document_id: document._id,
                     type: 'added',
                     to: document,
@@ -20,7 +20,7 @@ for(var collection_name in DB){
 
             changed: function (newDocument, oldDocument) {
                 DB.Changes.insert({
-                    database: collection._name,
+                    database: DB[collection_name]._name,
                     document_id: newDocument._id,
                     type: 'changed',
                     from: oldDocument,
@@ -31,7 +31,7 @@ for(var collection_name in DB){
 
             removed: function (document) {
                 DB.Changes.insert({
-                    database: collection._name,
+                    database: DB[collection_name]._name,
                     document_id: document._id,
                     type: 'removed',
                     from: document,
